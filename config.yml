@@ -1,0 +1,79 @@
+# ===========================================================================
+# Plex Payments Configuration
+# If you find any issues, need support, or have a suggestion for the bot, please join our support server and create a ticket, 
+# https://discord.gg/eRaeJdTsPY
+# Documentation: https://docs.plexdevelopment.net
+# ===========================================================================
+
+# ===========================================================================
+# BOT INFORMATION
+# You must not leave them as blank!
+# ===========================================================================
+Token: "BOT_TOKEN" # If you don't know how to get it, Look at our docs: https://docs.plexdevelopment.net
+BotName: "Plex Payments"
+GuildID: "GUILD_ID" # This is your server's ID, Right click on your server icon and copy ID
+EmbedColors: "#2ECC71" # Hex color!
+LogCommands: false # If this is enabled it will log all the commands executed to the terminal
+
+# ===========================================================================
+# BOT ACTIVITY
+# ===========================================================================
+BotActivitySettings:
+  Enabled: true
+  Type: "WATCHING" # WATCHING, PLAYING, COMPETING
+  Interval: 30 # Time in seconds between status changes, It's recommended to keep it above 20-30 seconds to avoid getting ratelimited
+  Statuses: # Valid Variables: {total-users}, {total-channels}
+    - "{total-users} users"
+    - "{total-channels} channels"
+
+
+# ===========================================================================
+# GENERAL INFORMATION
+# ===========================================================================
+BusinessName: "Plex Development" # Your business name
+TermsOfService: "https://plexdevelopment.net/tos" # Your Terms of Service link
+Currency: "USD"
+CurrencySymbol: "$"
+
+UnpaidEmbedColor: "#E74C3C" # The embed color of an invoice when it's unpaid (HEX COLOR)
+PaidEmbedColor: "#2ECC71" # The embed color of an invoice when it's paid (HEX COLOR)
+
+# ===========================================================================
+# STRIPE INVOICES
+# ===========================================================================
+StripeSettings:
+  Enabled: true # Enable stripe command?
+  StripeSecretKey: "SECRET_KEY"
+  AllowedRoles: ["ROLE_ID"] # Users with these roles can use the stripe command, You can add multiple roles
+  CustomerRole: "ROLE_ID" # The role to give users when they pay, Leave blank to disable
+  LogsChannelID: "CHANNEL_ID" # The channel all payment logs will be sent to, Leave blank to disable
+
+# ===========================================================================
+# PAYPAL INVOICES
+# ===========================================================================
+PayPalSettings:
+  Enabled: true # Enable paypal command?
+  PayPalSecretKey: "SECRET_KEY" # PayPal Live API Secret Key
+  PayPalClientID: "CLIENT_ID" # PayPal Live API Client ID
+  Email: "EMAIL" # The PayPal email that should receive all payments
+  AllowedRoles: ["ROLE_ID"] # Users with these roles can use the paypal command, You can add multiple roles
+  CustomerRole: "ROLE_ID" # The role to give users when they pay, Leave blank to disable
+  LogsChannelID: "CHANNEL_ID" # The channel all payment logs will be sent to, Leave blank to disable
+
+# ===========================================================================
+# LOCALE
+# ===========================================================================
+Locale:
+  NoPermsMessage: "Sorry, you don't have permissions to use this command!"
+  Status: "Status:"
+  Information: "Information"
+  PayPalInvoiceTitle: "PayPal Invoice"
+  PayPalInvoiceMsg: "Please click the button below to pay!"
+  PayPalSeller: "Seller:"
+  PayPalUser: "User:"
+  PayPalPrice: "Price:"
+  PayPalService: "Service:"
+  PayPalPayInvoice: "Pay Invoice"
+  StripeInvoiceTitle: "Stripe Invoice"
+  PayPalNewPayment: "PayPal Logs | New Payment"
+  StripeNewPayment: "Stripe Logs | New Payment"
